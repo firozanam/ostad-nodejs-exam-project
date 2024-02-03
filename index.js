@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
             }
         });
     } else if (req.method === 'POST' && req.url === '/uploads') {
-        upload.single('myUpload')(req, res, (error) => {
+        upload.single('myUpload')(req, res, (error) => { 
             if (error) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' })
                 res.write('Opps! file upload is failed')
