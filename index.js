@@ -1,7 +1,9 @@
 const http = require('http')
-const port = 5500;
 const fs = require('fs')
 const multer = require('multer')
+
+const env = require('dotenv').config();
+const port = process.env.PORT || 3000;
 
 const storage = multer.diskStorage({
     destination: function (req, file, callBack){
